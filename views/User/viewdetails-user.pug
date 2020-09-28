@@ -1,0 +1,14 @@
+extends ../template/common
+
+block content
+    h1 View details user which has ID: #{user.id}
+
+    h2 Info :
+
+    ul
+        li ID : #{user.id}
+        li Name : #{user.name}
+        
+    a(href="/") Back to Home
+    br
+    a(href="/users") Back to List Users

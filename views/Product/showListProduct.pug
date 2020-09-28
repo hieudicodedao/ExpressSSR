@@ -1,0 +1,16 @@
+extends ../template/common
+
+block customlink
+    link(rel="stylesheet", href="../../public/css/showListProduct.css")
+block content
+    h1 You have #{numberItems} products in your package!
+    .container
+        .row
+            each item in items
+                .col-xs-3
+                .card(style='width: 18rem')
+                    img.card-img-top(src= item.image  alt='Card image cap')
+                    .card-body
+                    h5.card-title= item.name
+                    p.card-text=item.description
+                    a(href="/cart/add/" + item.id  ,class = "btn btn-primary") Add to Cart

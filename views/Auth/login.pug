@@ -1,0 +1,17 @@
+extends ../template/common
+
+block content
+    if errors
+        each error in errors
+            h3= error
+    form(action="" method = "POST")
+        p Email : 
+        input(type="email", name="input_email" , value = last_input ? last_input.input_email : "")
+        br
+        p Password : 
+        input(type="password", name="input_password", value = last_input ? last_input.input_password : "")
+        br
+        button(type="submit" value = "submit") Log In
+    
+
+    p default admin@gmail.com - admin

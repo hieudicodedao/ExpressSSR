@@ -1,0 +1,15 @@
+extends ../template/common
+
+block content 
+    h1 Transfer Money  
+    form(action="/transfer" method = "POST")
+        input(type="hidden", name="_csrf" value= csrfToken)
+        p Account Code : 
+        
+        input#acccode(type="text" name = "acccode")
+        br
+        p Amount Number : 
+        
+        input#amount(type="number", name="amount")
+        br
+        button(type="submit" value = "submit") Send

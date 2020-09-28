@@ -1,0 +1,20 @@
+extends ../template/common
+
+block content
+    h1 List user of my Database
+
+    a(href="/users/create-user") Add more user
+
+    form(action="/users/search" method = "GET")
+        input(type="text" name="q")
+        button(type="submit") Search
+
+    ul
+        each user in users
+            if(user.avatar)
+                img(src=user.avatar alt="Avatar" width="32")
+            li  Name : #{user.name} - Email : #{user.email} - Phone Number : #{user.phonnumber}
+                
+                a(href=`/viewdetails-user/${user.id}`)
+                
+    a(href="/") Back To Home
